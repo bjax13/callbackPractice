@@ -23,7 +23,7 @@ and what you should write is the sayHi function that makes the code above work,
 */
 
 var first=function(arr,cb){
-  cb(arr[0]);
+  return cb(arr[0]);
 }
 
   //Code Here for first
@@ -43,7 +43,7 @@ first(names, function(firstName){
 
   //Code Here for last
 var last=function(arr,cb){
-  cb(arr[arr.length-1]);
+  return cb(arr[arr.length-1]);
 }
 
 
@@ -64,7 +64,7 @@ last(names, function(lastName){
 
   //Code Here for multiply
   var multiply = function(a,b,cb){
-    cb(a * b);
+    return cb(a * b);
   }
 
 
@@ -81,14 +81,13 @@ multiply(4, 3, function(answer){
 var contains = function(arr, str, cb){
   for (var i = 0; i < arr.length; i++) {
     if (arr[i]===str) {
-      return true;
-    }else {
-      return false;
+      return cb(true);
     }
   }
+  return cb(false);
 }
 
-
+// **********************************************_____________---------------------------Could be wronge
 
   //Code Here for contains
 
@@ -106,21 +105,23 @@ contains(names, 'Colt', function(result){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-var uniq = function(array, cb){
-  var uniqArr = [];
-  for (var i = 0; i < array.length; i++) {
-    for (var j = 0; j < array.length; j++) {
-      if (array[i]===array[j]) {
-        uniqArr.push(array[j]);
 
-      }
-    }
-  }
-  return uniqArr;
-}
 
 
     //Code Here for uniq
+    var uniq = function(array, cb){
+      var uniqArr = [];
+      for (var i = 0; i < array.length; i++) {
+        for (var j = 0; j < array.length; j++) {
+          if (array[i]===array[j]) {
+            uniqArr.push(array[j]);
+
+          }
+        }
+      }
+      return cb(uniqArr);
+    }
+
 
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -136,6 +137,14 @@ uniq(names, function(uniqArr){
 
 
     //Code Here for each
+var each = function(array,cb){
+  for (var i = 0; i < array.length; i++) {
+    cb(array[i],i);
+  }
+  return;
+}
+
+
 
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -152,6 +161,11 @@ each(names, function(item, indice){
 
 
  //code here for getUserById
+var getUserID = function(obj, id, cb){
+
+
+}
+
 
 var users = [
   {
