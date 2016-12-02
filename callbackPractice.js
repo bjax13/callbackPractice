@@ -43,7 +43,7 @@ first(names, function(firstName){
 
   //Code Here for last
 var last=function(arr,cb){
-  cb(arr[arr.length-1])
+  cb(arr[arr.length-1]);
 }
 
 
@@ -63,6 +63,10 @@ last(names, function(lastName){
 
 
   //Code Here for multiply
+  var multiply = function(a,b,cb){
+    cb(a * b);
+  }
+
 
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -74,7 +78,15 @@ multiply(4, 3, function(answer){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+var contains = function(arr, str, cb){
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i]===str) {
+      return true;
+    }else {
+      return false;
+    }
+  }
+}
 
 
 
@@ -94,7 +106,18 @@ contains(names, 'Colt', function(result){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
+var uniq = function(array, cb){
+  var uniqArr = [];
+  for (var i = 0; i < array.length; i++) {
+    for (var j = 0; j < array.length; j++) {
+      if (array[i]===array[j]) {
+        uniqArr.push(array[j]);
 
+      }
+    }
+  }
+  return uniqArr;
+}
 
 
     //Code Here for uniq
