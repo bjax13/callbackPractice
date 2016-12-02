@@ -159,11 +159,14 @@ each(names, function(item, indice){
 
 
 
-
  //code here for getUserById
-var getUserID = function(obj, id, cb){
-
-
+var getUserById = function(array, id, cb){
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].id === id) {
+      cb(array[i]);
+    }
+  }
+  return;
 }
 
 
