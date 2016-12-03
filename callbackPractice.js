@@ -106,19 +106,18 @@ contains(names, 'Colt', function(result){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-
+// indexOf   and splice
 
     //Code Here for uniq
     var uniq = function(array, cb){
       var uniqArr = [];
-      for (var i = 0; i < array.length; i++) {
-        for (var j = 0; j < array.length; j++) {
-          if (array[i]===array[j]) {
-            uniqArr.push(array[j]);
 
+        for (var i = 0; i < array.length; i++) {
+          if(uniqArr.indexOf(array[i])=== -1){
+            uniqArr.push(array[i]);
           }
         }
-      }
+
       return cb(uniqArr);
     }
 
